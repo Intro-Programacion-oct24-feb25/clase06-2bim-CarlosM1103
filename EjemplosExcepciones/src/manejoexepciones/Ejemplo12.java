@@ -22,7 +22,7 @@ public class Ejemplo12 {
 
         while (i < resultados.length) {
             try {
-                System.out.printf("Ingrese los valores de la operacion %d\n",i+1);
+                System.out.printf("\nIngrese los valores de la operacion %d\n",i+1);
                 System.out.println("Ingrese valor 1:");
                 int valor1 = entrada.nextInt(); // se espera un valor entero 
                 System.out.println("Ingrese valor 2:");
@@ -30,12 +30,10 @@ public class Ejemplo12 {
                 resultados[i] = valor1 / valor2;
                 i = i + 1;
             } catch (ArithmeticException e) {
-                System.out.printf("(ArithmeticException) Ocurrió una "
-                        + "excepción %s\n", e);
+                System.out.printf("Ocurrió una excepción %s\n", e);
                 entrada.nextLine();
             } catch (InputMismatchException e) {
-                System.out.printf("(InputMismatchException) Ocurrió una "
-                        + "excepción %s\n", e);
+                System.out.printf("Ocurrió una excepción %s\n", e);
                 entrada.nextLine();
             } catch (Exception e) {
                 System.out.printf("Ocurrió una excepción %s\n", e);
