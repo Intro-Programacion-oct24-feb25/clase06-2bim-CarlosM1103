@@ -15,27 +15,24 @@ public class Pais {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         Boolean bandera = true;
-
+        String pais = "";
         while (bandera) {
             try {
                 System.out.println("Ingrese el nombre de un pais: ");
-                String pais = entrada.nextLine();
+                pais = entrada.nextLine();
                 char vocal = pais.charAt(0);
-                
-        
-                if (vocal == 'A' || vocal == 'E' || vocal == 'I' || vocal == 'O'|| vocal == 'U') {
+
+                if (vocal == 'A' || vocal == 'E' || vocal == 'I' || vocal == 'O' || vocal == 'U') {
                     throw new Exception("El pais tiene que tener como inicial una consonante");
-                } 
-                else {
-                bandera = false;
+                } else {
+                    bandera = false;
                 }
-                 
-                
-             
 
             } catch (Exception e) {
                 System.out.printf("Ocurrió una excepción %s\n", e);
             }
+            
+            System.out.printf("\nLo ingresado fue: %s\n", pais);
         }
     }
 

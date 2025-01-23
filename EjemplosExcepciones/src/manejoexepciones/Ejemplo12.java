@@ -18,37 +18,34 @@ public class Ejemplo12 {
         System.out.println("Ingrese cuantas operaciones quiere realizar");
         int valor = entrada.nextInt();
         int[] resultados = new int[valor];
-        boolean bandera = true;
+        int i = 0;
 
-         while (bandera) {
+        while (i < resultados.length) {
             try {
-                for (int i = 0; i < resultados.length; i++){
+                System.out.printf("Ingrese los valores de la operacion %d\n",i+1);
                 System.out.println("Ingrese valor 1:");
                 int valor1 = entrada.nextInt(); // se espera un valor entero 
                 System.out.println("Ingrese valor 2:");
                 int valor2 = entrada.nextInt(); // se espera un valor entero // 0
-                resultados [i] = valor1 / valor2;
-                }
-                System.out.printf("Resultado %d\n", resultado);
-                bandera = false;
-            } catch (InputMismatchException inputMismatchException) {
-
-                System.out.printf("Existe un error de tipo %s\n",
-                        inputMismatchException);
-            } catch (ArithmeticException arithmeticException) {
-
-                System.out.println("Lo sentimos hay un error");
-                System.out.printf("De tipo %s\n", arithmeticException);
-
+                resultados[i] = valor1 / valor2;
+                i = i + 1;
+            } catch (ArithmeticException e) {
+                System.out.printf("(ArithmeticException) Ocurrió una "
+                        + "excepción %s\n", e);
+                entrada.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.printf("(InputMismatchException) Ocurrió una "
+                        + "excepción %s\n", e);
+                entrada.nextLine();
+            } catch (Exception e) {
+                System.out.printf("Ocurrió una excepción %s\n", e);
+                entrada.nextLine();
             }
         }
-        
-        for (int i = 0; i < resultados.length; i++) {
-            System.out.println(resultados[i]);
+        System.out.println("\nResultados:");
+        for (i = 0; i < resultados.length; i++) {
+            System.out.printf("%s\n",resultados[i]);
         }
-        
-        
-    
-
     }
+
 }
