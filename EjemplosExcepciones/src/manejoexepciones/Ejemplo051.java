@@ -27,7 +27,10 @@ public class Ejemplo051 {
                 int resultado = valor1 / valor2;
 
                 System.out.printf("Resultado %d\n", resultado);
+                /* Se pone bandera = false al final porque se asume que 
+                lo anterior esta correcto*/
                 bandera = false;
+               
             } catch (InputMismatchException inputMismatchException) {
 
                 System.out.printf("Existe un error de tipo %s\n",
